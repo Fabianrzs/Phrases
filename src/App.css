@@ -1,38 +1,106 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  //background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.wrap{
+  /* background-color: #fff; */
+
+  padding: 2rem 3rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  box-shadow: 0px 0px 25px #222;
+  animation: grow-shrink 2s ease-in-out infinite;
 }
 
-@keyframes App-logo-spin {
+@keyframes grow-shrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.typewriter p{
+  overflow: hidden; /* Para que no se muestren todas las letras al principio */
+  animation: typing 5s steps(30, end) infinite; /* 3 segundos de duración con 30 pasos */
+  white-space: nowrap; /* Para que el texto no se divida en varias líneas */
+  border-right: 0.15em solid orange; /* Agrega un borde animado que imita la máquina de escribir */
+}
+
+@keyframes typing {
   from {
-    transform: rotate(0deg);
+    width: 0;
   }
   to {
-    transform: rotate(360deg);
+    width: 100%;
   }
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__label{
+  display: block;
+  padding-left: 1rem;
+  font-weight: bolder;
+  color: rgba(25, 60, 115, 0.75);
+  text-transform: uppercase;
+  font-size: .75rem;
+  margin-bottom: 1rem;
+}
+
+.login__input {
+  color: rgba(17, 97, 237, 1);
+  font-size: 1.15rem;
+  width: 100%;
+  padding: .5rem 1rem;
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 1px;
+}
+
+.login__input:hover,
+.login__input:focus{
+  color: rgba(17, 97, 237, 1);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+}
+
+.login__input + .login__label {
+  margin-top: 1.5rem;
+}
+
+.login__submit {
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+  padding: .80rem;
+  border-radius: 2rem;
+  background-color: rgba(17, 97, 237, 1);
+  border: none;
+  cursor: pointer;
+}
+
+.login__submit:hover {
+  background-color: rgba(9, 109, 180, 0.75);
 }
